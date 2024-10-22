@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok Style Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .login-container {
+            background-color: white;
+            width: 500px;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .login-container img {
+            width: auto;
+            height: 100px;
+        }
+
+        .logo {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .input-field {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            outline: none;
+            transition: border 0.3s ease;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus {
+            border-color: #333;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #fe2c55;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #d02645;
+        }
+
+        .social-login {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .social-login button {
+            width: 48%;
+            background-color: #f9f9f9;
+            color: #333;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-login button:hover {
+            background-color: #e6e6e6;
+        }
+
+        .social-login img {
+            margin-right: 8px;
+            width: 18px;
+            height: 18px;
+        }
+
+        .divider {
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background-color: #ddd;
+        }
+
+        .divider::before {
+            margin-right: 10px;
+        }
+
+        .divider::after {
+            margin-left: 10px;
+        }
+
+        .signup-link {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .signup-link a {
+            color: #fe2c55;
+            text-decoration: none;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Pesan login berhasil */
+        #login-message {
+            display: none;
+            color: green;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="logo">
+            <img src="C:\Users\muham\Downloads\ip-removebg-preview.png" alt="TikTok Logo" width="50">
+        </div>
+        <h2>Log in to Taktak</h2>
+
+        
+        <form id="login-form">
+            <div class="input-field">
+                <input type="text" name="username" placeholder="Username" required>
+            </div>
+            <div class="input-field">
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit">Log in</button>
+        </form>
+
+        <div class="divider">or</div>
+
+        <div class="social-login">
+            <button><img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Google"> Continue with Google</button>
+            <button><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"> Continue with Facebook</button>
+        </div>
+
+        <div class="signup-link">
+            Don't have an account? <a href="#">Sign up</a>
+        </div>
+
+        <!-- Pesan login berhasil -->
+        <div id="login-message">Login Successful!</div>
+
+        <!-- Konten tambahan yang akan ditampilkan -->
+        <div id="additional-content">
+            <h3>Welcome to the Next Step</h3>
+            <p>This is some additional content that appears after login.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Mencegah form disubmit
+            
+            // Tampilkan pesan login berhasil
+            document.getElementById("login-message").style.display = "block"; 
+            
+            // Tampilkan konten tambahan
+            document.getElementById("additional-content").style.display = "block"; 
+            
+            // Alihkan ke halaman lain setelah 2 detik
+            setTimeout(function() {
+                window.location.href = "website_project_pertama.html";
+            }, 2000); // Pengalihan setelah 2 detik
+        });
+    </script>
+</body>
+</html>
